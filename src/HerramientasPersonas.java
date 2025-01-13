@@ -1,6 +1,6 @@
 public class HerramientasPersonas {
     public static String getLetraNIF(int numDni){
-        int resultado = (numDni - (numDni / 23) * 23);
+        int resultado = (numDni - ((numDni / 23) * 23));
         String letra = "";
         if(resultado == 0){
             letra = "T";
@@ -54,4 +54,23 @@ public class HerramientasPersonas {
         return letra;
     }
     
+    public static String getLetraaNIF(int numDni){
+        int resultado = (numDni - (numDni - ((numDni / 23) * 23)));
+        
+        String secuencia = "TRWAGMYFPDXBNJZSQVHLCKET";
+        char letra = secuencia.charAt(resultado);
+        String letraConvertida = String.valueOf(letra);
+        return letraConvertida;
+    }
+
+    //MÉTODO QUE RECIBA UN NIF/DNI Y NOS DEVUELVA SI ES VÁLIDO O NO
+    public static boolean validarNIF(String nif){
+        int longitud = nif.length()-1;
+        char ultimaLetra = nif.charAt(longitud);
+        String soloNumeros = nif.substring(0, longitud);
+        int numeroDni = Integer.parseInt(soloNumeros);
+        String letraComparacion = String.valueOf(ultimaLetra);
+        String resultado = getLetraNIF(numeroDni);
+        return resultado.equals(letraComparacion);
+    }
 }
