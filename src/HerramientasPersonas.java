@@ -73,4 +73,41 @@ public class HerramientasPersonas {
         String resultado = getLetraNIF(numeroDni);
         return resultado.equals(letraComparacion);
     }
+
+    public static String getDiaNacimiento(int dia, int mes, int anio) {
+        if (mes == 1 || mes == 2) {
+            mes += 12;
+            anio -= 1;
+        }
+    
+        int paso1 = ((mes + 1) * 3) / 5;
+        int paso2 = anio / 4;
+        int paso3 = anio / 100;
+        int paso4 = anio / 400;
+        int paso5 = dia + (mes * 2) + anio + paso1 + paso2 - paso3 + paso4 + 2;
+        int paso6 = paso5 / 7;
+        int paso7 = paso5 - (paso6 * 7);
+    
+        String[] diaSemana = {"Sábado", "Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes"};
+        return diaSemana[paso7];
+
+        // if(paso7 == 0){
+        //     diaSemana = "Sábado";
+        // }else if(paso7 == 1){
+        //     diaSemana = "Domingo";
+        // }else if(paso7 == 2){
+        //     diaSemana = "Lunes";
+        // }else if(paso7 == 3){
+        //     diaSemana = "Martes";
+        // }else if(paso7 == 4){
+        //     diaSemana = "Miércoles";
+        // }else if(paso7 == 5){
+        //     diaSemana = "Jueves";
+        // }else if(paso7 == 6){
+        //     diaSemana = "Viernes";
+        // }
+        // return diaSemana;
+    }
+
+
 }
