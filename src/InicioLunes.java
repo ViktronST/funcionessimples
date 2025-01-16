@@ -32,5 +32,18 @@ public class InicioLunes {
         }
     }
 
+    //Otra manera de hacerlo
+    public static String evaluarNumeroo(int num){
+        String respuesta = "";
+        if(num > 0){
+            respuesta = "POSITIVO";
+        }else if (num == 0){
+            respuesta = "CERO";
+        }else{
+            respuesta = "NEGATIVO";
+        }
+        return respuesta;
+    }
+
 }
 
