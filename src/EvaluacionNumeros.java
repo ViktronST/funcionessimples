@@ -1,13 +1,15 @@
 public class EvaluacionNumeros {
     
     public static void evaluacionNumeros(){
-        System.out.println("Elije:");
+        System.out.println("Elije una opción:");
         System.out.println("1.- Mostrar el mayor de los dos números");
         System.out.println("2.- Mostrar el menor de los dos números");
         System.out.println("3.- Mostrar el mayor, el menor y el intermedio");
+        System.out.println("");
     }
 
     public static boolean mayoDosNumeros(int num1, int num2){
+        System.out.println("");
         boolean operacion = (num1 <= num2);
         return operacion;
     }
@@ -18,6 +20,8 @@ public class EvaluacionNumeros {
     }
 
     public static int mayorDosNumeros(int num1, int num2){
+        System.out.println("");
+
         if(num1 > num2){
             return num1;
         }else{
@@ -35,6 +39,7 @@ public class EvaluacionNumeros {
 
     public static void evaluarTresNumeros(int num1, int num2, int num3){
         int mayor, menor, intermedio;
+        System.out.println("");
         if(num1>=num2 && num1>=num3){
             mayor = num1;
         }else if(num2>=num1 && num2>=num3){
